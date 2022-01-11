@@ -33,6 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -44,9 +45,9 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'mobile' => $request->mobile,
             'address' => $request->address,
-            'city' => $request->city,
-            'state' => $request->state,
-            'country' => $request->country,
+            'country' => $request->country_id,
+            'state' => $request->state_id,
+            'city' => $request->city_id,
             'pincode' => $request->pincode,
             'role_id' => $request->role_id,
             'password' =>Hash::make($request->password),

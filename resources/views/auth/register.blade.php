@@ -40,7 +40,7 @@
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
             </div>
 
-            <!-- City -->
+            {{-- <!-- City -->
             <div class="mt-4">
                 <x-label for="city" :value="__('City')" />
 
@@ -59,6 +59,30 @@
                 <x-label for="country" :value="__('Country')" />
 
                 <x-input id="country" class="block mt-1 w-full" type="text" name="country" :value="old('country')" required />
+            </div> --}}
+
+            <div class="form-group mb-3">
+                <label> Select Country<label>
+                        <select id="country-dd" name="country_id" class="form-control">
+                            <option value="">Select Country</option>
+                            @foreach ($countries as $data)
+                            <option value="{{$data->id}}">
+                                {{$data->name}}
+                            </option>
+                            @endforeach
+                        </select>
+            </div>
+            <div class="form-group mb-3">
+                <label>Select State</label>
+                <select id="state-dd" name="state_id" class="form-control">
+                    <option value="">Select State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select City<label>
+                        <select id="city-dd" name="city_id" class="form-control">
+                            <option value="">Select City</option>
+                        </select>
             </div>
 
             <!-- Pin Code-->

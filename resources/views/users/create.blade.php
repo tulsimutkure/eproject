@@ -60,7 +60,9 @@
 
 
         <div class="form-group mb-3">
-            {{-- <label> Select Country<label> --}}
+           {{-- <h5 class="card-title">Country</h5> --}}
+           <label>Country</label>
+           <div>
                     <select id="country-dd" name="country_id" class="form-control">
                         <option value="">Select Country</option>
                         @foreach ($countries as $data)
@@ -69,18 +71,20 @@
                         </option>
                         @endforeach
                     </select>
+                </div>
         </div>
         <div class="form-group mb-3">
-            {{-- <label>Select State</label> --}}
+            <label> State</label>
+            <div>
             <select id="state-dd" name="state_id" class="form-control">
                 <option value="">Select State</option>
             </select>
         </div>
         <div class="form-group">
-            {{-- <label>Select City<label> --}}
-                    <select id="city-dd" name="city_id" class="form-control">
-                        <option value="">Select City</option>
-                    </select>
+            <label>Select City<label>
+                <select id="city-dd" name="city_id" class="form-control">
+                    <option value="">Select City</option>
+            </select>
         </div>
 
         <div class="form-group">
@@ -97,9 +101,9 @@
             </div>
         </div> --}}
         <div class="form-group mb-3">
-            {{-- <label>Role ID</label>       --}}
+            {{-- <label>Role ID</label> --}}
             <select id="role_id-dd" name="role_id" class="form-control">
-                <option value="">Select Role ID</option>
+                <option value="">Select Role </option>
                 @foreach ($roles as $data)
                 <option value="{{$data->id}}">
                     {{$data->name}}
@@ -124,10 +128,9 @@
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Sign up</button>
+            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
         </div>
     </form>
 </div>
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-

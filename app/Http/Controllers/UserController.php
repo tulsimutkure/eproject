@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\{Country, State, City};
 use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     public function create()
@@ -31,7 +33,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->mobile = $request->mobile;
         $user->address = $request->address;
         $user->country_id = $request->country_id;
